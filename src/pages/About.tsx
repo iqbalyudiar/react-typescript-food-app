@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { Fragment } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const About: React.FC = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <Fragment>
@@ -22,5 +22,5 @@ export const About: React.FC = () => {
         Go back
       </button>
     </Fragment>
-  )
-}
+  );
+};

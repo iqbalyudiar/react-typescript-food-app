@@ -1,5 +1,5 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 export const Navbar: React.FC = () => (
   <nav>
@@ -17,4 +17,4 @@ export const Navbar: React.FC = () => (
       </ul>
     </div>
   </nav>
-)
+);
