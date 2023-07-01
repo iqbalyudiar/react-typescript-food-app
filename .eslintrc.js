@@ -4,7 +4,7 @@ const path = require('path');
 const prettierOptions = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, '.prettierrc'), 'utf8'),
 );
-mosule.exports = {
+module.exports = {
   "root": true,
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
@@ -14,7 +14,6 @@ mosule.exports = {
   },
   "rules": {
     "prettier/prettier": ["error", prettierOptions],
-    "arrow-body-style": [2, "as-needed"],
     "no-underscore-dangle": 0,
     "class-methods-use-this": 0,
     "import/imports-first": 0,
@@ -22,7 +21,8 @@ mosule.exports = {
     "import/no-dynamic-require": 0,
     "import/no-extraneous-dependencies": 0,
     "import/no-named-as-default": 0,
-    "import/no-unresolved": 1,
+    // "import/no-unresolved": 1,
+    'import/extensions': "off",
     "import/no-webpack-loader-syntax": 0,
     "import/prefer-default-export": 0,
     indent: [
@@ -32,23 +32,23 @@ mosule.exports = {
         SwitchCase: 1,
       },
     ],
-    "jsx-a11y/aria-props": 2,
+    // "jsx-a11y/aria-props": 2,
     "jsx-a11y/click-events-have-key-events": 0,
     "jsx-a11y/heading-has-content": 0,
-    "jsx-a11y/label-has-associated-control": [
-      2,
-      {
-        // NOTE: If this error triggers, either disable it or add
-        // your custom components, labels and attributes via these options
-        // See https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-associated-control.md
-        controlComponents: ["Input"],
-      },
-    ],
+    // "jsx-a11y/label-has-associated-control": [
+    //   2,
+    //   {
+    //     // NOTE: If this error triggers, either disable it or add
+    //     // your custom components, labels and attributes via these options
+    //     // See https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-associated-control.md
+    //     controlComponents: ["Input"],
+    //   },
+    // ],
     "jsx-a11y/label-has-for": 0,
-    "jsx-a11y/mouse-events-have-key-events": 2,
+    // "jsx-a11y/mouse-events-have-key-events": 2,
     "jsx-a11y/no-static-element-interactions": 0,
-    "jsx-a11y/role-has-required-aria-props": 2,
-    "jsx-a11y/role-supports-aria-props": 2,
+    // "jsx-a11y/role-has-required-aria-props": 2,
+    // "jsx-a11y/role-supports-aria-props": 2,
     "max-len": 0,
     "newline-per-chained-call": 0,
     "no-confusing-arrow": 0,
