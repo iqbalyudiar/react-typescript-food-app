@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRestaurants } from '@/actions/RestaurantAction';
+import { IState as IRestaurantState } from '@/reducers/RestaurantReducer/interfaces';
 import { useTranslation } from 'react-i18next';
 import {
   Avatar,
@@ -18,7 +19,9 @@ import { ChevronRight } from '@mui/icons-material';
 const RestaurantList: React.FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const restaurants = useSelector((state: any) => state.restaurant);
+  const restaurants = useSelector(
+    (state: IRestaurantState) => state.restaurant,
+  );
 
   useEffect(() => {
     dispatch(fetchRestaurants());
