@@ -1,12 +1,15 @@
-import { combineReducers, createStore } from 'redux';
-import { devToolsEnhancer } from 'redux-devtools-extension';
+import { createStore, applyMiddleware } from 'redux';
+// import { devToolsEnhancer } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
+import reducers from '@/reducers';
 
 /* Create root reducer, containing all features of the application */
-const rootReducer = combineReducers({});
 
 const store = createStore(
-  rootReducer,
-  /* preloadedState, */ devToolsEnhancer({}),
+  reducers,
+  // /* preloadedState, */ devToolsEnhancer({}),
+  undefined,
+  applyMiddleware(thunk),
 );
 
 export default store;
