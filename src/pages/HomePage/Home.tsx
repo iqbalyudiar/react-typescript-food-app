@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import {
   Typography,
   Box,
@@ -12,12 +13,16 @@ import { LocalDining, Fastfood } from '@mui/icons-material';
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const goToRestaurantList = () => navigate('/restaurants');
 
   const items = [
     {
       id: 1,
       text: t('home.item.restaurant'),
       icon: <LocalDining />,
+      action: goToRestaurantList,
     },
     {
       id: 2,
@@ -33,7 +38,7 @@ const Home: React.FC = () => {
       <List>
         {items.map((item) => {
           return (
-            <ListItem key={item.id}>
+            <ListItem key={item.id} onClick={item.action}>
               <ListItemIcon>{item.icon}</ListItemIcon>
               <ListItemText primary={item.text} />
             </ListItem>
