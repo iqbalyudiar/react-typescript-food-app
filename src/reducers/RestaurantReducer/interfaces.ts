@@ -19,5 +19,7 @@ export interface IFood {
   price: number;
 }
 export interface IState {
-  restaurant: [IRestaurant];
+  restaurant: {
+    restaurantList: [IRestaurant];
+  };
 }

@@ -20,9 +20,10 @@ import { ChevronRight } from '@mui/icons-material';
 const RestaurantList: React.FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const restaurants = useSelector(
+  const { restaurantList } = useSelector(
     (state: IRestaurantState) => state.restaurant,
   );
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -38,7 +39,7 @@ const RestaurantList: React.FC = () => {
         {t('restaurant.list.title')}
       </Typography>
       <List>
-        {restaurants.map((item: any) => {
+        {restaurantList.map((item: any) => {
           return (
             <Fragment>
               <ListItem
