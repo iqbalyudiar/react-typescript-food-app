@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -8,6 +8,7 @@ import {
   ListItem,
   ListItemText,
   ListItemIcon,
+  Divider,
 } from '@mui/material';
 import { LocalDining, Fastfood } from '@mui/icons-material';
 
@@ -32,16 +33,19 @@ const Home: React.FC = () => {
   ];
   return (
     <Box sx={{ paddingX: 4, paddingY: 2 }}>
-      <Typography variant="h3" sx={{ marginBottom: 4 }}>
+      <Typography variant="h1" sx={{ marginBottom: 4, fontSize: 28 }}>
         {t('home.title')}
       </Typography>
       <List>
         {items.map((item) => {
           return (
-            <ListItem key={item.id} onClick={item.action}>
-              <ListItemIcon>{item.icon}</ListItemIcon>
-              <ListItemText primary={item.text} />
-            </ListItem>
+            <Fragment>
+              <ListItem key={item.id} onClick={item.action}>
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemText primary={item.text} />
+              </ListItem>
+              <Divider />
+            </Fragment>
           );
         })}
       </List>
