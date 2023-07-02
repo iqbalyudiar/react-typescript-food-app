@@ -26,7 +26,7 @@ const Routers = [
   {
     id: 3,
     Component: RestaurantDetail,
-    path: '/restaurants/:id',
+    path: '/restaurants/:restaurantId',
   },
 ];
 
