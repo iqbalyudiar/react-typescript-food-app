@@ -2,6 +2,9 @@ import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import store from './store';
 
+// utils i18n
+import '@/utils/i18n';
+
 import './index.css';
 
 import App from './App';
