@@ -84,6 +84,8 @@ module.exports = {
     'require-yield': 0,
     'no-cond-assign': 0,
     'no-plusplus': 0,
+    'default-param-last': 0,
+    '@typescript-eslint/default-param-last': 0,
   },
   overrides: [
     {
