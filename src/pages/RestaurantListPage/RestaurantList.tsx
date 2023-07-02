@@ -1,4 +1,6 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchRestaurants } from '@/actions/RestaurantAction';
 import { useTranslation } from 'react-i18next';
 import {
   Avatar,
@@ -15,27 +17,20 @@ import { ChevronRight } from '@mui/icons-material';
 
 const RestaurantList: React.FC = () => {
   const { t } = useTranslation();
-  const items = [
-    {
-      id: 1,
-      name: 'Mc Donalds',
-      logo:
-        'https://seeklogo.com/images/M/mc-donald-s-logo-8568BCE03C-seeklogo.com.png',
-    },
-    {
-      id: 2,
-      name: 'KFC',
-      logo:
-        'https://seeklogo.com/images/K/kfc-new-logo-72E6348046-seeklogo.com.png',
-    },
-  ];
+  const dispatch = useDispatch();
+  const restaurants = useSelector((state: any) => state.restaurant);
+
+  useEffect(() => {
+    dispatch(fetchRestaurants());
+  }, [dispatch]);
+
   return (
     <Box sx={{ width: '100%', paddingY: 2 }}>
       <Typography variant="h1" sx={{ fontSize: 24, mb: 4 }}>
         {t('restaurant.list.title')}
       </Typography>
       <List>
-        {items.map((item) => {
+        {restaurants.map((item: any) => {
           return (
             <Fragment>
               <ListItem sx={{ width: '100%', paddingY: 2 }} key={item.id}>
