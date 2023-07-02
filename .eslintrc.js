@@ -4,9 +4,14 @@ const path = require('path');
 const prettierOptions = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, '.prettierrc'), 'utf8'),
 );
+const tsconfig = path.resolve(__dirname, 'tsconfig.json');
+
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: [tsconfig],
+  },
   plugins: ['@typescript-eslint', 'prettier', 'react', 'jsx-a11y'],
   extends: ['airbnb-typescript', 'plugin:prettier/recommended'],
   env: {
