@@ -1,6 +1,7 @@
 import React, { Key } from 'react';
 import Home from '@/pages/HomePage/Home';
 import RestaurantList from '@/pages/RestaurantListPage/RestaurantList';
+import RestaurantDetail from '@/pages/RestaurantDetailPage/RestaurantDetail';
 
 export interface IRouter {
   index?: boolean;
@@ -21,6 +22,11 @@ const Routers = [
     id: 2,
     Component: RestaurantList,
     path: '/restaurants',
+  },
+  {
+    id: 3,
+    Component: RestaurantDetail,
+    path: '/restaurants/:id',
   },
 ];
 

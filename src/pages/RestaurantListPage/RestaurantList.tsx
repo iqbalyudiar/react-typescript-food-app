@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { fetchRestaurants } from '@/actions/RestaurantAction';
 import { IState as IRestaurantState } from '@/reducers/RestaurantReducer/interfaces';
 import { useTranslation } from 'react-i18next';
@@ -22,10 +23,14 @@ const RestaurantList: React.FC = () => {
   const restaurants = useSelector(
     (state: IRestaurantState) => state.restaurant,
   );
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(fetchRestaurants());
   }, [dispatch]);
+
+  const goToRestaurantDetail = (id: string | number) =>
+    navigate(`/restaurants/${id}`);
 
   return (
     <Box sx={{ width: '100%', paddingY: 2 }}>
@@ -36,7 +41,11 @@ const RestaurantList: React.FC = () => {
         {restaurants.map((item: any) => {
           return (
             <Fragment>
-              <ListItem sx={{ width: '100%', paddingY: 2 }} key={item.id}>
+              <ListItem
+                sx={{ width: '100%', paddingY: 2 }}
+                key={item.id}
+                onClick={() => goToRestaurantDetail(item.id)}
+              >
                 <ListItemAvatar>
                   <Avatar alt={item.name} src={item.logo} />
                 </ListItemAvatar>
