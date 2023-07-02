@@ -1,11 +1,6 @@
 import { FETCH_RESTAURANTS } from '@/constant/redux/types';
+import { IAction } from './interfaces';
 
-interface IAction {
-  type: string;
-  payload: {
-    data: any;
-  };
-}
 export default (state = [], action: IAction) => {
   switch (action.type) {
     case FETCH_RESTAURANTS:
