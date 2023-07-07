@@ -2,6 +2,7 @@ import React, { Key } from 'react';
 import Home from '@/pages/HomePage/Home';
 import RestaurantList from '@/pages/RestaurantListPage/RestaurantList';
 import RestaurantDetail from '@/pages/RestaurantDetailPage/RestaurantDetail';
+import Cart from '@/pages/CartPage/Cart';
 
 export interface IRouter {
   index?: boolean;
@@ -27,6 +28,11 @@ const Routers = [
     id: 3,
     Component: RestaurantDetail,
     path: '/restaurants/:restaurantId',
+  },
+  {
+    id: 3,
+    Component: Cart,
+    path: '/cart',
   },
 ];
 
