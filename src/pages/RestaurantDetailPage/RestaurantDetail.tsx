@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { addToCart } from '@/actions/CartAction';
+import { addToCart, removeFromCart } from '@/actions/CartAction';
 import {
   Box,
   Button,
@@ -30,14 +30,8 @@ const RestaurantDetail: React.FC = () => {
   );
 
   const quantity = (id: string | number) => {
-    console.log({
-      currentCartRestaurant,
-      currentRestaurant: currentRestaurant.name,
-    });
-
     if (currentCartRestaurant !== currentRestaurant.name) return 0;
     const item = cartItems.find((cart: any) => cart.id === id);
-    console.log(cartItems);
 
     return item ? item.quantity : 0;
   };
@@ -70,7 +64,12 @@ const RestaurantDetail: React.FC = () => {
                   >
                     {quantity(item.id) > 0 && (
                       <Fragment>
-                        <Button variant="contained" color="error" size="small">
+                        <Button
+                          variant="contained"
+                          color="error"
+                          size="small"
+                          onClick={() => dispatch(removeFromCart(item.id))}
+                        >
                           -
                         </Button>
                         <Typography>{quantity(item.id)}</Typography>
