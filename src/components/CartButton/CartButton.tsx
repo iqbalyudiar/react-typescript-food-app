@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Box, Fab, Typography } from '@mui/material';
 import { ShoppingCart } from '@mui/icons-material';
@@ -34,6 +35,7 @@ const Title: React.FC = (props) => {
   );
 };
 const CartButton = (props: any) => {
+  const navigate = useNavigate();
   return (
     <Fab
       variant="extended"
@@ -46,6 +48,7 @@ const CartButton = (props: any) => {
         transform: 'translateX(-50%)',
         paddingY: 3,
       }}
+      onClick={() => navigate('/cart')}
     >
       <Title {...props} />
       <ShoppingCart sx={{ marginLeft: 2 }} />
