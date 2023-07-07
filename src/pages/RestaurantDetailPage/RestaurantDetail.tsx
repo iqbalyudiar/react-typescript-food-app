@@ -2,6 +2,8 @@ import React, { Fragment } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart, removeFromCart } from '@/actions/CartAction';
+
+import CartButton from '@/components/CartButton/CartButton';
 import {
   Box,
   Button,
@@ -91,6 +93,7 @@ const RestaurantDetail: React.FC = () => {
           </Card>
         );
       })}
+      {cartItems.length > 0 && <CartButton />}
     </Box>
   );
 };
