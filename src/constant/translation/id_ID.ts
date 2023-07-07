@@ -6,4 +6,8 @@ export default {
 
   // Restaurant List Page
   'restaurant.list.title': 'Daftar Restoran',
+
+  // Restaurant Detail Page
+  'restaurant.detail.cart.button.item': '{{total}} item',
+  'restaurant.detail.cart.button.order': 'Pesanan dari {{restaurantName}}',
 };

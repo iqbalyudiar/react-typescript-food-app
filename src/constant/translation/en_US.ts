@@ -6,4 +6,8 @@ export default {
 
   // Restaurant List Page
   'restaurant.list.title': 'Restaurant List',
+
+  // Restaurant Detail Page
+  'restaurant.detail.cart.button.item': '{{total}} items',
+  'restaurant.detail.cart.button.order': 'Order from {{restaurantName}}',
 };
