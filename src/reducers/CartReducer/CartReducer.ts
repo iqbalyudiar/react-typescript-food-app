@@ -1,4 +1,4 @@
-import { ADD_TO_CART } from '@/constant/redux/types';
+import { ADD_TO_CART, REMOVE_FROM_CART } from '@/constant/redux/types';
 
 const initialState = {
   cartItems: [],
@@ -27,6 +27,22 @@ export default (state = initialState, action: any) => {
         ],
         restaurant: action.payload.restaurant,
       };
+    case REMOVE_FROM_CART:
+      if (found) {
+        const newCarts = state.cartItems
+          .map((cart: any) =>
+            cart.id === action.payload.food.id && cart.quantity > 0
+              ? { ...cart, quantity: cart.quantity - 1 }
+              : cart,
+          )
+          .filter((item) => item.quantity > 0);
+
+        const newRestaurant = newCarts.length === 0 ? '' : state.restaurant;
+
+        return { ...state, cartItems: newCarts, restaurant: newRestaurant };
+      }
+
+      return { ...state };
     default:
       return state;
   }
