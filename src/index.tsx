@@ -1,5 +1,6 @@
 import { createRoot } from 'react-dom/client';
-import { Provider } from 'react-redux';
+import { Provider as ReduxProvider } from 'react-redux';
+import { SnackbarProvider } from 'notistack';
 import store from './store';
 
 // utils i18n
@@ -13,7 +14,9 @@ const container = document.getElementById('root') as HTMLDivElement;
 const root = createRoot(container!);
 
 root.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <ReduxProvider store={store}>
+    <SnackbarProvider>
+      <App />
+    </SnackbarProvider>
+  </ReduxProvider>,
 );
