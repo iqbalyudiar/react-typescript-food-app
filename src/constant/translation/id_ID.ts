@@ -10,6 +10,8 @@ export default {
   // Restaurant Detail Page
   'restaurant.detail.cart.button.item': '{{total}} item',
   'restaurant.detail.cart.button.order': 'Pesanan dari {{restaurantName}}',
+  'restaurant.detail.cart.error.adding':
+    'Tidak bisa menambah pesanan dari restoran yang berbeda',
 
   // Cart Page
   'cart.order.title': 'Rincian Pesanan Anda',
