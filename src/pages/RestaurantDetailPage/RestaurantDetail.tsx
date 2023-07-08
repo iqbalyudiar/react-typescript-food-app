@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
+import { enqueueSnackbar } from 'notistack';
 import { addToCart, removeFromCart } from '@/actions/CartAction';
 
 import CartButton from '@/components/CartButton/CartButton';
@@ -25,6 +27,7 @@ const RestaurantDetail: React.FC = () => {
       };
     },
   );
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   const currentRestaurant = restaurantList.find(
@@ -39,6 +42,17 @@ const RestaurantDetail: React.FC = () => {
   };
 
   const handleAdd = (food: any, restaurantName: string) => {
+    if (
+      currentCartRestaurant &&
+      currentCartRestaurant !== currentRestaurant.name
+    ) {
+      enqueueSnackbar(t('restaurant.detail.cart.error.adding'), {
+        variant: 'error',
+        anchorOrigin: { vertical: 'top', horizontal: 'center' },
+        autoHideDuration: 700,
+      });
+      return;
+    }
     dispatch(addToCart(food, restaurantName));
   };
 
