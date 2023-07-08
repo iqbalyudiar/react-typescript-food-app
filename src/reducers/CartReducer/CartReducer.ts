@@ -2,7 +2,7 @@ import { ADD_TO_CART, REMOVE_FROM_CART } from '@/constant/redux/types';
 
 const initialState = {
   cartItems: [],
-  restaurant: {},
+  restaurant: '',
 };
 export default (state = initialState, action: any) => {
   const found = state.cartItems.some(
