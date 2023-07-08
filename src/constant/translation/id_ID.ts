@@ -10,4 +10,13 @@ export default {
   // Restaurant Detail Page
   'restaurant.detail.cart.button.item': '{{total}} item',
   'restaurant.detail.cart.button.order': 'Pesanan dari {{restaurantName}}',
+
+  // Cart Page
+  'cart.order.title': 'Rincian Pesanan Anda',
+  'cart.order.subtitle': 'Pesanan Dari {{restaurantName}}',
+  'cart.order.table.header.item': 'Item',
+  'cart.order.table.header.quantity': 'Jumlah',
+  'cart.order.table.header.price': 'Harga',
+  'cart.order.table.body.totalprice': 'Total Harga',
+  'cart.order.button': 'PESAN SEKARANG',
 };

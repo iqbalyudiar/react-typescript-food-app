@@ -10,4 +10,13 @@ export default {
   // Restaurant Detail Page
   'restaurant.detail.cart.button.item': '{{total}} items',
   'restaurant.detail.cart.button.order': 'Order from {{restaurantName}}',
+
+  // Cart Page
+  'cart.order.title': 'Your Order Summary',
+  'cart.order.subtitle': 'Order From {{restaurantName}}',
+  'cart.order.table.header.item': 'Items',
+  'cart.order.table.header.quantity': 'Quantity',
+  'cart.order.table.header.price': 'Price',
+  'cart.order.table.body.totalprice': 'Total Price',
+  'cart.order.button': 'ORDER NOW',
 };
