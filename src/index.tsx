@@ -2,6 +2,7 @@ import { createRoot } from 'react-dom/client';
 import { Provider as ReduxProvider } from 'react-redux';
 import { SnackbarProvider } from 'notistack';
 import store from './store';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 // utils i18n
 import '@/utils/i18n';
@@ -20,3 +21,5 @@ root.render(
     </SnackbarProvider>
   </ReduxProvider>,
 );
+
+serviceWorkerRegistration.register();
